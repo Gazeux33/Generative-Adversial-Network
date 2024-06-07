@@ -36,4 +36,4 @@ wgan = WGAN_GP(
     n_critic=config.N_CRITIC)
 
 if __name__ == "__main__":
-    wgan.train(dataloader, saving_freq=100)
+    wgan.train(dataloader, saving_freq=100,load=True)

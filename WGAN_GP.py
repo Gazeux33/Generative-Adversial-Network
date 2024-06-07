@@ -125,5 +125,5 @@ class WGAN_GP(nn.Module):
         utils.visualize_images(out, epoch, batch)
 
     def load(self):
-        self.generator.load_state_dict(torch.load("models/GeneratorFace_epoch2_batch1249.pkl"))
-        self.critic.load_state_dict(torch.load("models/CriticFace_epoch2_batch1249.pkl"))
+        self.generator.load_state_dict(torch.load("models/G_epoch5_batch499.pkl"))
+        self.critic.load_state_dict(torch.load("models/C_epoch5_batch499.pkl"))
