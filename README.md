@@ -25,3 +25,28 @@ The **Critic**'s task is to differentiate generated images from real images from
 - **Functioning**: It evaluates images one by one and delivers its verdict.
 - **Expected Outcome**: Maximize its ability to make the correct distinction.
 
+## How to train a GAN ?
+
+<div align="center">
+ <img  alt="how-to-train" align="center" src="https://github.com/Gazeux33/Generative-Adversial-Network/blob/main/assets/train.png" width="700"  />
+ </div>
+
+ ## Technical specifications
+
+
+ | Property       | Value         |
+|----------------|---------------|
+| Device         | MAC M2        |
+| Training Time  | 15 hours      |
+| Epochs         | 15            |
+| Training Data  | CelebA        |
+| Framework      | PyTorch       |
+| Learning rate  | 0.0002        |
+|Z_DIM           |128            |
+|BATCH_SIZE      |128            |
+|Images size     |(64,64)        |
+|LAMBDA          |10             |
+|N_CRITIC        |4              |
+|Optimizer       |Adam           |
+
+
