@@ -50,3 +50,8 @@ The **Critic**'s task is to differentiate generated images from real images from
 |Optimizer       |Adam           |
 
 
+ ## How to improve this model ?
+
+ This model is not perfect and to improve it we need to consolidate its architecture and increase the number of epochs.
+
+
