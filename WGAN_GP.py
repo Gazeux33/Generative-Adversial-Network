@@ -6,14 +6,15 @@ import utils
 
 
 class WGAN_GP(nn.Module):
-    def __init__(self, z_dim, critic, generator, critic_opt, generator_opt, batch_size=128, n_critic=5, fixed_noise=True):
+    def __init__(self, z_dim, critic, generator, critic_opt, generator_opt,device, batch_size=128, n_critic=5, fixed_noise=True):
         super(WGAN_GP, self).__init__()
+        self.device = device
         self.z_dim = z_dim
         self.batch_size = batch_size
         self.n_critic = n_critic
         self.fixed_noise = fixed_noise
         if self.fixed_noise:
-            self.static_random_noise = torch.randn(10, z_dim)
+            self.static_random_noise = torch.randn(10, z_dim).to(self.device)
 
         self.critic = critic
         self.generator = generator
@@ -37,8 +38,9 @@ class WGAN_GP(nn.Module):
             generator_losses = []
 
             for cnt, (real_data, _) in enumerate(iter(train)):
+                real_data = real_data.to(self.device)
                 current_batch_size = real_data.shape[0]
-                random_noise = torch.randn((current_batch_size, self.z_dim)).to(real_data.device)
+                random_noise = torch.randn((current_batch_size, self.z_dim)).to(real_data.device).to(self.device)
                 self.critic_opt.zero_grad()
 
                 pred_real = self.critic(real_data)
